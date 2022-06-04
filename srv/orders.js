@@ -212,7 +212,7 @@ module.exports = (srv) => {
             // eslint-disable-next-line no-unused-vars
             let updateResult = await db
                 .update(Orders)
-                .set({ Status: "C" })s
+                .set({ Status: "C" })
                 .where({ ClientEmail: clientEmail });
 
             returnOrder.status = "Succeded"
