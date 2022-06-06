@@ -1,73 +1,81 @@
 {
-  "name": "product_catalog",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@graphql-tools/schema": "^8.3.13",
-    "@sap/cds": "^5",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.8.19",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4",
-    "express-graphql": "^0.12.0",
-    "graphql": "^16.5.0"
-  },
-  "devDependencies": {
-    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
-    "@sap/ux-specification": "^1.100.3",
-    "@sapui5/ts-types": "^1.92.2",
-    "cds-swagger-ui-express": "^0.4.0",
-    "eslint": "^7.32.0",
-    "sqlite3": "^5.0.2"
-  },
-  "scripts": {
-    "start": "cds watch"
-  },
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "env": {
-      "es2020": true,
-      "node": true,
-      "jest": true,
-      "mocha": true
+    "name": "product_catalog",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@graphql-tools/schema": "^8.3.13",
+        "@sap/cds": "^5",
+        "@sap/cds-odata-v2-adapter-proxy": "^1.8.19",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4",
+        "express-graphql": "^0.12.0",
+        "graphql": "^16.5.0"
     },
-    "globals": {
-      "SELECT": true,
-      "INSERT": true,
-      "UPDATE": true,
-      "DELETE": true,
-      "CREATE": true,
-      "DROP": true,
-      "CDL": true,
-      "CQL": true,
-      "CXL": true,
-      "cds": true
+    "devDependencies": {
+        "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+        "@sap/ux-specification": "^1.100.3",
+        "@sapui5/ts-types": "^1.92.2",
+        "cds-swagger-ui-express": "^0.4.0",
+        "eslint": "^7.32.0",
+        "sqlite3": "^5.0.2"
     },
-    "rules": {
-      "no-console": "off",
-      "require-atomic-updates": "off"
-    }
-  },
-  "cds": {
-    "features": {
-      "graphql": true
+    "scripts": {
+        "start": "cds watch"
     },
-    "requires": {
-      "sapbackend": {
-        "kind": "odata-v2",
-        "model": "srv/external/sapbackend",
-        "credentials": {
-          "requestTimeout": 30000,
-          "url": "http://erp13.sap4practice.com:9037/sap/opu/odata/sap/YSAPUI5_SRV_01/",
-          "authentication": "NoAuthentication"
+    "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+            "es2020": true,
+            "node": true,
+            "jest": true,
+            "mocha": true
+        },
+        "globals": {
+            "SELECT": true,
+            "INSERT": true,
+            "UPDATE": true,
+            "DELETE": true,
+            "CREATE": true,
+            "DROP": true,
+            "CDL": true,
+            "CQL": true,
+            "CXL": true,
+            "cds": true
+        },
+        "rules": {
+            "no-console": "off",
+            "require-atomic-updates": "off"
         }
-      }
-    }
-  },
-  "sapux": [
-    "app/product"
-  ]
+    },
+    "cds": {
+        "i18n": {
+            "default_language": "en",
+            "folders": [
+                "_i18n",
+                "i18n",
+                "assets/i18n"
+            ]
+        },
+        "features": {
+            "graphql": true
+        },
+        "requires": {
+            "sapbackend": {
+                "kind": "odata-v2",
+                "model": "srv/external/sapbackend",
+                "credentials": {
+                    "requestTimeout": 30000,
+                    "url": "http://erp13.sap4practice.com:9037/sap/opu/odata/sap/YSAPUI5_SRV_01/",
+                    "authentication": "NoAuthentication"
+                }
+            }
+        }
+    },
+    "sapux": [
+        "app/product"
+    ]
 }
